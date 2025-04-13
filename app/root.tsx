@@ -71,7 +71,7 @@ export default function App() {
                   replace: !isFirstSearch,
                 });
               }}
-              role="search"
+              type="search"
             >
               <input
                 aria-label="Search contacts"

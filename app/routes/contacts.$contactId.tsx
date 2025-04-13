@@ -1,6 +1,6 @@
+import type { FunctionComponent } from 'react';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { Form, useFetcher, useLoaderData } from 'react-router';
-import type { FunctionComponent } from 'react';
 import invariant from 'tiny-invariant';
 
 import type { ContactRecord } from '../data';
@@ -94,6 +94,7 @@ const Favorite: FunctionComponent<{
   return (
     <fetcher.Form method="post">
       <button
+        type="button"
         aria-label={favorite ? 'お気に入りを削除' : 'お気に入りに追加'}
         name="favorite"
         value={favorite ? 'false' : 'true'}
