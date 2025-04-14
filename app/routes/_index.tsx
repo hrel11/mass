@@ -1,9 +1,17 @@
 export default function Index() {
   return (
-    <p id="index-page">
-      これはRRv7のデモです
-      <br />
-      <a href="https://remix.run">remix.runのドキュメント</a>をご覧ください。
-    </p>
+    <>
+      <p id="index-page" className="mx-2xl my-auto text-center text-[#818181]">
+        これはRRv7のデモです
+        <br />
+        <a
+          href="https://remix.run"
+          className="text-inherit hover:text-[#121212]"
+        >
+          remix.runのドキュメント
+        </a>
+        をご覧ください。
+      </p>
+    </>
   );
 }

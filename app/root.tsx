@@ -59,9 +59,14 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body suppressHydrationWarning={true}>
-        <div id="sidebar">
-          <h1>Remix Contacts</h1>
+      <body className="flex h-full w-full" suppressHydrationWarning={true}>
+        <div
+          id="sidebar"
+          className="flex w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]"
+        >
+          <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none">
+            Remix Contacts
+          </h1>
           <div>
             <Form
               id="search-form"
@@ -92,11 +97,11 @@ export default function App() {
               <button type="submit">New</button>
             </Form>
           </div>
-          <nav>
+          <nav className="flex overflow-auto pt-[1rem]">
             {contacts.length ? (
-              <ul>
+              <ul className="m-0 list-none p-0">
                 {contacts.map((contact) => (
-                  <li key={contact.id}>
+                  <li key={contact.id} className="mx-[0.25rem]">
                     <NavLink
                       className={({ isActive, isPending }) =>
                         isActive ? 'active' : isPending ? 'pending' : ''
