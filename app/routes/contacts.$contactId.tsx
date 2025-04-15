@@ -27,9 +27,10 @@ export default function Contact() {
   const { contact } = useLoaderData<typeof loader>();
 
   return (
-    <div id="contact">
+    <div id="contact" className="flex w-[40rem]">
       <div>
         <img
+          className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c8] object-cover"
           alt={`${contact.first} ${contact.last} avatar`}
           key={contact.avatar}
           src={contact.avatar}
@@ -37,7 +38,7 @@ export default function Contact() {
       </div>
 
       <div>
-        <h1>
+        <h1 className="m-0 flex items-start gap-[1rem] font-bold text-[2rem] leading-tight focus:text-[hsl(224,98%,58%)] focus:outline-none">
           {contact.first || contact.last ? (
             <>
               {contact.first} {contact.last}
@@ -49,8 +50,11 @@ export default function Contact() {
         </h1>
 
         {contact.twitter ? (
-          <p>
-            <a href={`https://twitter.com/${contact.twitter}`}>
+          <p className="m-0">
+            <a
+              href={`https://twitter.com/${contact.twitter}`}
+              className="flex text-[#3992ff] text-[1.5rem] no-underline hover:underline"
+            >
               {contact.twitter}
             </a>
           </p>
@@ -59,11 +63,17 @@ export default function Contact() {
         {contact.notes ? <p>{contact.notes}</p> : null}
 
         <div>
-          <Form action="edit">
-            <button type="submit">Edit</button>
+          <Form action="edit" className="flex items-center">
+            <button
+              type="submit"
+              className="p-0 font-normal text-[1.5rem] shadow-none"
+            >
+              Edit
+            </button>
           </Form>
 
           <Form
+            className="flex items-center"
             action="destroy"
             method="post"
             onSubmit={(event) => {
@@ -75,7 +85,12 @@ export default function Contact() {
               }
             }}
           >
-            <button type="submit">Delete</button>
+            <button
+              type="submit"
+              className="p-0 font-normal text-[#f44250] text-[1.5rem] shadow-none"
+            >
+              Delete
+            </button>
           </Form>
         </div>
       </div>
@@ -94,10 +109,13 @@ const Favorite: FunctionComponent<{
   return (
     <fetcher.Form method="post">
       <button
-        type="button"
+        type="submit"
         aria-label={favorite ? 'お気に入りを削除' : 'お気に入りに追加'}
         name="favorite"
         value={favorite ? 'false' : 'true'}
+        className={
+          favorite ? '!text-[#eeb004]' : '!text-[#a4a4a4] hover:!text-[#eeb004]'
+        }
       >
         {favorite ? '★' : '☆'}
       </button>

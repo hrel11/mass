@@ -27,15 +27,21 @@ export default function EditContact() {
   const navigate = useNavigate();
 
   return (
-    <Form key={contact.id} id="contact-form" method="post">
-      <p>
-        <span>Name</span>
+    <Form
+      key={contact.id}
+      id="contact-form"
+      className="flex max-w-[40rem] flex-col gap-[1rem]"
+      method="post"
+    >
+      <p className="m-0 flex p-0">
+        <span className="w-[8rem]">Name</span>
         <input
           aria-label="First name"
           defaultValue={contact.first}
           name="first"
           placeholder="First"
           type="text"
+          className="!mr-[1rem] grow-2"
         />
         <input
           aria-label="Last name"
@@ -43,35 +49,47 @@ export default function EditContact() {
           name="last"
           placeholder="Last"
           type="text"
+          className="grow-2"
         />
       </p>
-      <label>
-        <span>Twitter</span>
+      <label className="flex">
+        <span className="w-[8rem]">Twitter</span>
         <input
           defaultValue={contact.twitter}
           name="twitter"
           placeholder="@jack"
           type="text"
+          className="grow-2"
         />
       </label>
-      <label>
-        <span>Avatar URL</span>
+      <label className="flex">
+        <span className="w-[8rem]">Avatar URL</span>
         <input
           aria-label="Avatar URL"
           defaultValue={contact.avatar}
           name="avatar"
           placeholder="https://example.com/avatar.jpg"
           type="text"
+          className="grow-2"
         />
       </label>
-      <label>
-        <span>Notes</span>
-        <textarea defaultValue={contact.notes} name="notes" rows={6} />
+      <label className="flex">
+        <span className="w-[8rem]">Notes</span>
+        <textarea
+          defaultValue={contact.notes}
+          name="notes"
+          rows={6}
+          className="grow-2"
+        />
       </label>
 
-      <p>
+      <p className="ml-[8rem] flex gap-[0.5rem]">
         <button type="submit">保存</button>
-        <button onClick={() => navigate(-1)} type="button">
+        <button
+          onClick={() => navigate(-1)}
+          type="button"
+          className="!text-inherit"
+        >
           キャンセル
         </button>
       </p>
