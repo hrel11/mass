@@ -67,7 +67,7 @@ export default function App() {
           <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none">
             Remix Contacts
           </h1>
-          <div>
+          <div className="flex items-center gap-[0.5rem] border-gray-300 border-b py-[1rem]">
             <Form
               id="search-form"
               onChange={(event) => {
@@ -77,10 +77,11 @@ export default function App() {
                 });
               }}
               type="search"
+              className="relative box-border w-full"
             >
               <input
                 aria-label="Search contacts"
-                className={searching ? 'loading' : ''}
+                className={`!pl-8 bg-[length:1rem] bg-[position:0.625rem_0.75rem] bg-no-repeat ${searching ? 'loading bg-none' : ''}`}
                 id="q"
                 name="q"
                 // ユーザーの入力をコンポーネントの状態に同期
@@ -91,20 +92,31 @@ export default function App() {
                 value={query}
               />
 
-              <div aria-hidden hidden={!searching} id="search-spinner" />
+              <div
+                aria-hidden
+                hidden={!searching}
+                id="search-spinner"
+                className="absolute top-[0.75rem] left-[0.625rem] h-4 w-4"
+              />
             </Form>
-            <Form method="post">
+            <Form method="post" className="relative">
               <button type="submit">New</button>
             </Form>
           </div>
           <nav className="flex overflow-auto pt-[1rem]">
             {contacts.length ? (
-              <ul className="m-0 list-none p-0">
+              <ul className="m-0 w-full list-none p-0">
                 {contacts.map((contact) => (
                   <li key={contact.id} className="mx-[0.25rem]">
                     <NavLink
                       className={({ isActive, isPending }) =>
-                        isActive ? 'active' : isPending ? 'pending' : ''
+                        `flex items-center justify-between gap-[1rem] overflow-hidden whitespace-pre rounded-[8px] p-[0.5rem] text-inherit no-underline transition-colors duration-100 hover:bg-[#e3e3e3] ${
+                          isActive
+                            ? 'bg-[hsl(224,98%,58%)] text-white [&>span]:text-inherit'
+                            : isPending
+                              ? 'animate-[progress_2s_infinite_ease-in-out] [animation-delay:200ms]'
+                              : ''
+                        }`
                       }
                       to={`contacts/${contact.id}`}
                     >
@@ -113,9 +125,11 @@ export default function App() {
                           {contact.first} {contact.last}
                         </>
                       ) : (
-                        <i>名前なし</i>
+                        <i className="text-inherit">名前なし</i>
                       )}{' '}
-                      {contact.favorite ? <span>★</span> : null}
+                      {contact.favorite ? (
+                        <span className="float-right text-[#eeb004]">★</span>
+                      ) : null}
                     </NavLink>
                   </li>
                 ))}
