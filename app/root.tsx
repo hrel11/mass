@@ -64,7 +64,7 @@ export default function App() {
           id="sidebar"
           className="flex w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]"
         >
-          <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none">
+          <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none before:relative before:top-[1px] before:mr-[0.5rem]">
             Remix Contacts
           </h1>
           <div className="flex items-center gap-[0.5rem] border-gray-300 border-b py-[1rem]">
@@ -142,10 +142,11 @@ export default function App() {
           </nav>
         </div>
         <div
-          className={
-            navigation.state === 'loading' && !searching ? 'loading' : ''
-          }
-          id="detail"
+          className={`w-full flex-1 px-[4rem] py-[2rem] ${
+            navigation.state === 'loading' && !searching
+              ? 'opacity-25 transition-opacity duration-200 [transition-delay:200ms]'
+              : ''
+          }`}
         >
           <Outlet />
         </div>

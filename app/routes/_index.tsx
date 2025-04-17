@@ -1,7 +1,10 @@
 export default function Index() {
   return (
     <>
-      <p id="index-page" className="mx-2xl my-auto text-center text-[#818181]">
+      <p
+        id="index-page"
+        className="mx-2xl my-auto text-center text-[#818181] before:mb-[0.5rem] before:block"
+      >
         これはRRv7のデモです
         <br />
         <a

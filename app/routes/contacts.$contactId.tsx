@@ -62,7 +62,7 @@ export default function Contact() {
 
         {contact.notes ? <p>{contact.notes}</p> : null}
 
-        <div>
+        <div className="my-[1rem] flex gap-[0.5rem]">
           <Form action="edit" className="flex items-center">
             <button
               type="submit"
@@ -87,7 +87,7 @@ export default function Contact() {
           >
             <button
               type="submit"
-              className="p-0 font-normal text-[#f44250] text-[1.5rem] shadow-none"
+              className="!text-[#f44250] p-0 font-normal text-[1.5rem] shadow-none"
             >
               Delete
             </button>
