@@ -44,7 +44,7 @@ export default function Contact() {
               {contact.first} {contact.last}
             </>
           ) : (
-            <i>No Name</i>
+            <i className="text-[#818181]">No Name</i>
           )}{' '}
           <Favorite contact={contact} />
         </h1>

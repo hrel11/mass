@@ -136,7 +136,7 @@ export default function App() {
               </ul>
             ) : (
               <p>
-                <i>連絡先なし</i>
+                <i className="text-[#818181]">連絡先なし</i>
               </p>
             )}
           </nav>
