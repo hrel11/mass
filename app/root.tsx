@@ -81,7 +81,7 @@ export default function App() {
             >
               <input
                 aria-label="Search contacts"
-                className={`!pl-8 bg-[length:1rem] bg-[position:0.625rem_0.75rem] bg-no-repeat ${searching ? 'loading bg-none' : ''}`}
+                className={`!pl-8 bg-[length:1rem] bg-[position:0.625rem_0.75rem] bg-no-repeat ${searching ? '!bg-none' : ''}`}
                 id="q"
                 name="q"
                 // ユーザーの入力をコンポーネントの状態に同期
@@ -96,14 +96,14 @@ export default function App() {
                 aria-hidden
                 hidden={!searching}
                 id="search-spinner"
-                className="absolute top-[0.75rem] left-[0.625rem] h-4 w-4"
+                className="absolute top-[0.75rem] left-[0.625rem] h-4 w-4 animate-spin"
               />
             </Form>
             <Form method="post" className="relative">
               <button type="submit">New</button>
             </Form>
           </div>
-          <nav className="flex overflow-auto pt-[1rem]">
+          <nav className="flex h-full overflow-auto pt-[1rem]">
             {contacts.length ? (
               <ul className="m-0 w-full list-none p-0">
                 {contacts.map((contact) => (

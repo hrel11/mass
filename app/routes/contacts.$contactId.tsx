@@ -50,7 +50,7 @@ export default function Contact() {
         </h1>
 
         {contact.twitter ? (
-          <p className="m-0">
+          <p className="m-0 w-fit">
             <a
               href={`https://twitter.com/${contact.twitter}`}
               className="flex text-[#3992ff] text-[1.5rem] no-underline hover:underline"
