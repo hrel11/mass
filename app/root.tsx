@@ -59,7 +59,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex h-full w-full" suppressHydrationWarning={true}>
+      <body
+        className="m-0 flex h-full w-full text-[#121212] leading-[1.5]"
+        suppressHydrationWarning={true}
+      >
         <div
           id="sidebar"
           className="flex w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]"
