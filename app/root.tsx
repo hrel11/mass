@@ -24,6 +24,8 @@ import {
 
 import { createEmptyContact, getContacts } from './data';
 
+import sidebarIcon from './sidebarIcon.svg';
+
 export const action = async () => {
   const contact = await createEmptyContact();
   return redirect(`/contacts/${contact.id}/edit`);
@@ -65,14 +67,18 @@ export default function App() {
       >
         <div
           id="sidebar"
-          className="flex w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]"
+          className="flex h-[100vh] w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]"
         >
-          <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none before:relative before:top-[1px] before:mr-[0.5rem]">
+          <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none">
+            <img
+              src={sidebarIcon}
+              alt="sidebarIcon"
+              className="relative top-[1px] mr-[0.5rem]"
+            />
             Remix Contacts
           </h1>
           <div className="flex items-center gap-[0.5rem] border-gray-300 border-b py-[1rem]">
             <Form
-              id="search-form"
               onChange={(event) => {
                 const isFirstSearch = q === null;
                 submit(event.currentTarget, {
@@ -106,7 +112,7 @@ export default function App() {
               <button type="submit">New</button>
             </Form>
           </div>
-          <nav className="flex h-full overflow-auto pt-[1rem]">
+          <nav className="overflow-auto pt-[1rem]">
             {contacts.length ? (
               <ul className="m-0 w-full list-none p-0">
                 {contacts.map((contact) => (
