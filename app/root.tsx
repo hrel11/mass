@@ -24,6 +24,7 @@ import {
 
 import { createEmptyContact, getContacts } from './data';
 
+import searchLogo from './searchLogo.svg';
 import sidebarIcon from './sidebarIcon.svg';
 
 export const action = async () => {
@@ -65,10 +66,8 @@ export default function App() {
         className="m-0 flex h-full w-full text-[#121212] leading-[1.5]"
         suppressHydrationWarning={true}
       >
-        <div
-          id="sidebar"
-          className="flex h-[100vh] w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]"
-        >
+        {/* sidebar */}
+        <div className="flex h-[100vh] w-[22rem] flex-col border-[#e3e3e3] border-r bg-[#f7f7f7] [&>*]:px-[2rem]">
           <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none">
             <img
               src={sidebarIcon}
@@ -90,7 +89,7 @@ export default function App() {
             >
               <input
                 aria-label="Search contacts"
-                className={`!pl-8 bg-[length:1rem] bg-[position:0.625rem_0.75rem] bg-no-repeat ${searching ? '!bg-none' : ''}`}
+                className="!pl-8 relative"
                 id="q"
                 name="q"
                 // ユーザーの入力をコンポーネントの状態に同期
@@ -100,7 +99,11 @@ export default function App() {
                 // `defaultValue`から`value`に変更
                 value={query}
               />
-
+              <img
+                src={searchLogo}
+                alt="searchLogo"
+                className={`-translate-y-[50%] absolute top-[50%] left-[0.625rem] w-[1rem] ${searching ? 'hidden' : ''}`}
+              />
               <div
                 aria-hidden
                 hidden={!searching}
