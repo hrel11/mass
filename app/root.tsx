@@ -25,6 +25,7 @@ import {
 import { createEmptyContact, getContacts } from './data';
 
 import searchLogo from './searchLogo.svg';
+import searchSpinner from './searchSpinner.svg';
 import sidebarIcon from './sidebarIcon.svg';
 
 export const action = async () => {
@@ -102,13 +103,16 @@ export default function App() {
               <img
                 src={searchLogo}
                 alt="searchLogo"
-                className={`-translate-y-[50%] absolute top-[50%] left-[0.625rem] w-[1rem] ${searching ? 'hidden' : ''}`}
+                className="-translate-y-[50%] absolute top-[50%] left-[0.625rem] w-[1rem]"
+                aria-hidden
+                hidden={searching}
               />
-              <div
+              <img
+                src={searchSpinner}
+                alt="searchLogo"
+                className="-translate-y-[50%] absolute top-[50%] left-[0.625rem] w-[1rem] animate-spin"
                 aria-hidden
                 hidden={!searching}
-                id="search-spinner"
-                className="absolute top-[0.75rem] left-[0.625rem] h-4 w-4 animate-spin"
               />
             </Form>
             <Form method="post" className="relative">
