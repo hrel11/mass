@@ -27,7 +27,7 @@ export default function Contact() {
   const { contact } = useLoaderData<typeof loader>();
 
   return (
-    <div id="contact" className="flex w-[40rem]">
+    <div className="flex w-[40rem]">
       <div>
         <img
           className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c8] object-cover"
