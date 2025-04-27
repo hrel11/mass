@@ -29,7 +29,6 @@ export default function EditContact() {
   return (
     <Form
       key={contact.id}
-      id="contact-form"
       className="flex max-w-[40rem] flex-col gap-[1rem]"
       method="post"
     >
