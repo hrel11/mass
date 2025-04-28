@@ -22,6 +22,7 @@ import {
   useSubmit,
 } from 'react-router';
 
+import { SquareButton } from '~/components/SquareButton';
 import { createEmptyContact, getContacts } from './data';
 
 import searchLogo from './searchLogo.svg';
@@ -116,7 +117,7 @@ export default function App() {
               />
             </Form>
             <Form method="post" className="relative">
-              <button type="submit">New</button>
+              <SquareButton type="submit">New</SquareButton>
             </Form>
           </div>
           <nav className="overflow-auto pt-[1rem]">

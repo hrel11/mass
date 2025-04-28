@@ -6,6 +6,8 @@ import invariant from 'tiny-invariant';
 import type { ContactRecord } from '../data';
 import { getContact, updateContact } from '../data';
 
+import { SquareButton } from '~/components/SquareButton';
+
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   invariant(params.contactId, 'Missing contactId param');
   const contact = await getContact(params.contactId);
@@ -64,12 +66,12 @@ export default function Contact() {
 
         <div className="my-[1rem] flex gap-[0.5rem]">
           <Form action="edit" className="flex items-center">
-            <button
+            <SquareButton
               type="submit"
               className="p-0 font-normal text-[1.5rem] shadow-none"
             >
               Edit
-            </button>
+            </SquareButton>
           </Form>
 
           <Form
@@ -85,12 +87,12 @@ export default function Contact() {
               }
             }}
           >
-            <button
+            <SquareButton
               type="submit"
-              className="!text-[#f44250] p-0 font-normal text-[1.5rem] shadow-none"
+              className="p-0 font-normal text-[#f44250] text-[1.5rem] shadow-none"
             >
               Delete
-            </button>
+            </SquareButton>
           </Form>
         </div>
       </div>
@@ -108,17 +110,17 @@ const Favorite: FunctionComponent<{
 
   return (
     <fetcher.Form method="post">
-      <button
+      <SquareButton
         type="submit"
         aria-label={favorite ? 'お気に入りを削除' : 'お気に入りに追加'}
         name="favorite"
         value={favorite ? 'false' : 'true'}
         className={
-          favorite ? '!text-[#eeb004]' : '!text-[#a4a4a4] hover:!text-[#eeb004]'
+          favorite ? 'text-[#eeb004]' : 'text-[#a4a4a4] hover:text-[#eeb004]'
         }
       >
         {favorite ? '★' : '☆'}
-      </button>
+      </SquareButton>
     </fetcher.Form>
   );
 };

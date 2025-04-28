@@ -9,8 +9,7 @@ body {
 }
 
 textarea,
-input,
-button {
+input {
   font-size: 1rem;
   font-family: inherit;
   border: none;
@@ -24,22 +23,11 @@ button {
   margin: 0;
 }
 
-button {
-  color: #3992ff;
-  font-weight: 500;
-}
-
 textarea:hover,
-input:hover,
-button:hover {
+input:hover {
   box-shadow:
     0 0px 1px hsla(0, 0%, 0%, 0.6),
     0 1px 2px hsla(0, 0%, 0%, 0.2);
-}
-
-button:active {
-  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
-  transform: translateY(1px);
 }
 
 @keyframes progress {

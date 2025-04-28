@@ -3,6 +3,7 @@ import { redirect } from 'react-router';
 import { Form, useLoaderData, useNavigate } from 'react-router';
 import invariant from 'tiny-invariant';
 
+import { SquareButton } from '~/components/SquareButton';
 import { getContact, updateContact } from '../data';
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -83,14 +84,14 @@ export default function EditContact() {
       </label>
 
       <p className="ml-[8rem] flex gap-[0.5rem]">
-        <button type="submit">保存</button>
-        <button
+        <SquareButton type="submit">保存</SquareButton>
+        <SquareButton
           onClick={() => navigate(-1)}
           type="button"
-          className="!text-inherit"
+          className="text-inherit"
         >
           キャンセル
-        </button>
+        </SquareButton>
       </p>
     </Form>
   );
