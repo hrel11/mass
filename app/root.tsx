@@ -120,7 +120,7 @@ export default function App() {
               <SquareButton type="submit">New</SquareButton>
             </Form>
           </div>
-          <nav className="overflow-auto pt-[1rem]">
+          <nav className="grow overflow-auto pt-[1rem]">
             {contacts.length ? (
               <ul className="m-0 w-full list-none p-0">
                 {contacts.map((contact) => (
