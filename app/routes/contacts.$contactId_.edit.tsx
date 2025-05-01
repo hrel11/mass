@@ -4,6 +4,7 @@ import { Form, useLoaderData, useNavigate } from 'react-router';
 import invariant from 'tiny-invariant';
 
 import { SquareButton } from '~/components/SquareButton';
+import { SquareInput } from '~/components/SquareInput';
 import { getContact, updateContact } from '../data';
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -35,15 +36,15 @@ export default function EditContact() {
     >
       <p className="m-0 flex p-0">
         <span className="w-[8rem]">Name</span>
-        <input
+        <SquareInput
           aria-label="First name"
           defaultValue={contact.first}
           name="first"
           placeholder="First"
           type="text"
-          className="!mr-[1rem] grow-2"
+          className="mr-[1rem] grow-2"
         />
-        <input
+        <SquareInput
           aria-label="Last name"
           defaultValue={contact.last}
           name="last"
@@ -52,9 +53,10 @@ export default function EditContact() {
           className="grow-2"
         />
       </p>
-      <label className="flex">
+      <label className="flex" htmlFor="twitter">
         <span className="w-[8rem]">Twitter</span>
-        <input
+        <SquareInput
+          id="twitter"
           defaultValue={contact.twitter}
           name="twitter"
           placeholder="@jack"
@@ -62,9 +64,10 @@ export default function EditContact() {
           className="grow-2"
         />
       </label>
-      <label className="flex">
+      <label className="flex" htmlFor="avatar">
         <span className="w-[8rem]">Avatar URL</span>
-        <input
+        <SquareInput
+          id="avatar"
           aria-label="Avatar URL"
           defaultValue={contact.avatar}
           name="avatar"

@@ -23,6 +23,7 @@ import {
 } from 'react-router';
 
 import { SquareButton } from '~/components/SquareButton';
+import { SquareInput } from '~/components/SquareInput';
 import { createEmptyContact, getContacts } from './data';
 
 import searchLogo from './searchLogo.svg';
@@ -89,9 +90,9 @@ export default function App() {
               type="search"
               className="relative box-border w-full"
             >
-              <input
+              <SquareInput
                 aria-label="Search contacts"
-                className="!pl-8 relative"
+                className="relative pl-8"
                 id="q"
                 name="q"
                 // ユーザーの入力をコンポーネントの状態に同期
