@@ -5,6 +5,7 @@ import invariant from 'tiny-invariant';
 
 import { SquareButton } from '~/components/SquareButton';
 import { SquareInput } from '~/components/SquareInput';
+import { SquareTextarea } from '~/components/SquareTextarea';
 import { getContact, updateContact } from '../data';
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -76,9 +77,10 @@ export default function EditContact() {
           className="grow-2"
         />
       </label>
-      <label className="flex">
+      <label className="flex" htmlFor="notes">
         <span className="w-[8rem]">Notes</span>
-        <textarea
+        <SquareTextarea
+          id="notes"
           defaultValue={contact.notes}
           name="notes"
           rows={6}
