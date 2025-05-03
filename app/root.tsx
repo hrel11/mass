@@ -66,7 +66,7 @@ export default function App() {
         <Links />
       </head>
       <body
-        className="m-0 flex h-full w-full text-[#121212] leading-[1.5]"
+        className="m-0 flex h-full w-full text-[#121212] leading-[1.5] antialiased"
         suppressHydrationWarning={true}
       >
         {/* sidebar */}
@@ -93,7 +93,6 @@ export default function App() {
               <SquareInput
                 aria-label="Search contacts"
                 className="relative pl-8"
-                id="q"
                 name="q"
                 // ユーザーの入力をコンポーネントの状態に同期
                 onChange={(event) => setQuery(event.currentTarget.value)}
@@ -132,7 +131,7 @@ export default function App() {
                           isActive
                             ? 'bg-[hsl(224,98%,58%)] text-white [&>span]:text-inherit'
                             : isPending
-                              ? 'animate-[progress_2s_infinite_ease-in-out] [animation-delay:200ms]'
+                              ? 'bg-[hsl(224,98%,58%,0.5)]'
                               : ''
                         }`
                       }

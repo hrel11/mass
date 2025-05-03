@@ -4,18 +4,4 @@ body {
   font-family:
     -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@keyframes progress {
-  0% {
-    background: #e3e3e3;
-  }
-  50% {
-    background: hsla(224, 98%, 58%, 0.5);
-  }
-  100% {
-    background: #e3e3e3;
-  }
 }
