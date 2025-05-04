@@ -1,4 +1,4 @@
-import sidebarIcon from './sidebarIcon.svg';
+import sidebarIcon from '~/sidebarIcon.svg';
 
 export const SidebarHeader = () => {
   return (

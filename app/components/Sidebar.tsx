@@ -1,5 +1,9 @@
+import { SidebarContactList } from '~/components/SidebarContactList';
 import { SidebarHeader } from '~/components/SidebarHeader';
 import { SidebarSearchForm } from '~/components/SidebarSearchForm';
+
+import { useEffect, useState } from 'react';
+import { useLoaderData, useNavigation, useSubmit } from 'react-router';
 
 export const Sidebar = () => {
   const { contacts, q } = useLoaderData<typeof loader>();

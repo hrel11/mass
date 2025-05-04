@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router';
 
-import type ContactRecord from './data';
+import type ContactRecord from '~/data';
 
 export const SidebarContactList = ({
   contacts,

@@ -3,8 +3,8 @@ import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { Form, useFetcher, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
 
-import type { ContactRecord } from '../data';
-import { getContact, updateContact } from '../data';
+import type { ContactRecord } from '~/data';
+import { getContact, updateContact } from '~/data';
 
 import { SquareButton } from '~/components/SquareButton';
 

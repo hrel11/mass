@@ -9,8 +9,8 @@ interface Props {
 
 import { SquareButton } from '~/components/SquareButton';
 import { SquareInput } from '~/components/SquareInput';
-import searchLogo from '~/components/searchLogo.svg';
-import searchSpinner from '~/components/searchSpinner.svg';
+import searchLogo from '~/searchLogo.svg';
+import searchSpinner from '~/searchSpinner.svg';
 
 export const SidebarSearchForm = ({
   query,
