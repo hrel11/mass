@@ -66,7 +66,7 @@ export default function App() {
         <Links />
       </head>
       <body
-        className="m-0 flex h-full w-full text-[#121212] leading-[1.5] antialiased"
+        className="m-0 flex h-full w-full font-remix-contacts text-[#121212] leading-[1.5] antialiased"
         suppressHydrationWarning={true}
       >
         {/* sidebar */}
