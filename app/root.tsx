@@ -1,6 +1,6 @@
 import type { LinksFunction, LoaderFunctionArgs } from 'react-router';
 
-import appStylesHref from './app.css?url';
+import appStylesHref from '~/styles/app.css?url';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: appStylesHref },

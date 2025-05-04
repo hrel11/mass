@@ -1,6 +1,6 @@
-import sidebarIcon from '~/sidebarIcon.svg';
+import sidebarIcon from '~/assets/sidebarIcon.svg';
 
-export const SidebarHeader = () => {
+export const Header = () => {
   return (
     <h1 className="order-1 m-0 flex items-center border-[#e3e3e3] border-t px-8 py-4 font-medium text-base leading-none">
       <img

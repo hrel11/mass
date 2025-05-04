@@ -2,9 +2,7 @@ import { NavLink } from 'react-router';
 
 import type ContactRecord from '~/data';
 
-export const SidebarContactList = ({
-  contacts,
-}: { contacts: ContactRecord[] }) => {
+export const ContactList = ({ contacts }: { contacts: ContactRecord[] }) => {
   return (
     <nav className="grow overflow-auto pt-[1rem]">
       {contacts.length ? (

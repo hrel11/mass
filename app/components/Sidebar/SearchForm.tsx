@@ -7,17 +7,12 @@ interface Props {
   searching: boolean;
 }
 
+import searchLogo from '~/assets/searchLogo.svg';
+import searchSpinner from '~/assets/searchSpinner.svg';
 import { SquareButton } from '~/components/SquareButton';
 import { SquareInput } from '~/components/SquareInput';
-import searchLogo from '~/searchLogo.svg';
-import searchSpinner from '~/searchSpinner.svg';
 
-export const SidebarSearchForm = ({
-  query,
-  setQuery,
-  submit,
-  searching,
-}: Props) => {
+export const SearchForm = ({ query, setQuery, submit, searching }: Props) => {
   return (
     <div className="flex items-center gap-[0.5rem] border-gray-300 border-b py-[1rem]">
       <Form

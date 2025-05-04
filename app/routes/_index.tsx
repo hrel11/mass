@@ -1,4 +1,4 @@
-import remixLogo from '~/remixLogo.svg';
+import remixLogo from '~/assets/remixLogo.svg';
 
 export default function Index() {
   return (
