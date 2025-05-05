@@ -5,6 +5,7 @@ import appStylesHref from '~/styles/app.css?url';
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: appStylesHref },
 ];
+
 import {
   Links,
   Meta,
@@ -12,7 +13,6 @@ import {
   ScrollRestoration,
   redirect,
 } from 'react-router';
-
 import { Main } from '~/components/Main';
 import { Sidebar } from '~/components/Sidebar';
 import { createEmptyContact, getContacts } from '~/data';
