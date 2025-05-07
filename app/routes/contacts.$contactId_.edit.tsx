@@ -60,7 +60,7 @@ export default function EditContact() {
           id="twitter"
           defaultValue={contact.twitter}
           name="twitter"
-          placeholder="@jack"
+          placeholder="@userid"
           type="text"
           className="grow-2"
         />
