@@ -4,7 +4,11 @@ import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  plugins: [
+    tailwindcss(),
+    !process.env.VITEST && reactRouter(), // vitest
+    tsconfigPaths(),
+  ],
   // npm run devでホストからアクセスできるようにする
   server: {
     host: true,
@@ -13,5 +17,10 @@ export default defineConfig({
       interval: 1000,
     },
     allowedHosts: ['dev-meraku.com'],
+  },
+  test: {
+    // vitest
+    globals: true,
+    environment: 'jsdom',
   },
 });

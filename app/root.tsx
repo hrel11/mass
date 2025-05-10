@@ -12,6 +12,7 @@ import {
   Scripts,
   ScrollRestoration,
   redirect,
+  useNavigation,
 } from 'react-router';
 import { Main } from '~/components/Main';
 import { Sidebar } from '~/components/Sidebar';
@@ -30,6 +31,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 export default function App() {
+  const navigation = useNavigation();
+
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
@@ -42,8 +45,8 @@ export default function App() {
         className="m-0 flex h-full w-full font-remix-contacts text-[#121212] leading-[1.5] antialiased"
         suppressHydrationWarning={true}
       >
-        <Sidebar />
-        <Main />
+        <Sidebar navigation={navigation} />
+        <Main navigation={navigation} />
         <ScrollRestoration />
         <Scripts />
       </body>

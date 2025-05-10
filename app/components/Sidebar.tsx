@@ -3,11 +3,10 @@ import { Header } from '~/components/Sidebar/Header';
 import { SearchForm } from '~/components/Sidebar/SearchForm';
 
 import { useEffect, useState } from 'react';
-import { useLoaderData, useNavigation, useSubmit } from 'react-router';
+import { useLoaderData, useSubmit } from 'react-router';
 
-export const Sidebar = () => {
+export const Sidebar = ({ navigation }) => {
   const { contacts, q } = useLoaderData<typeof loader>();
-  const navigation = useNavigation();
   const [query, setQuery] = useState(q || '');
   const submit = useSubmit();
 
