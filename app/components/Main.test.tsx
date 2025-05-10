@@ -4,7 +4,8 @@ import { Main } from './Main';
 import '@testing-library/jest-dom';
 
 describe('Main Component', () => {
-  it('renders the Outlet content', () => {
+  it('idle', () => {
+    // arrange
     const Stub = createRoutesStub([
       {
         path: '/',
@@ -16,10 +17,11 @@ describe('Main Component', () => {
       },
     ]);
 
+    // act
     render(<Stub initialEntries={['/']} />);
 
-    // Check if the Outlet content is rendered
-    const mainElement = screen.getByRole('main'); // <main> 要素を取得
+    // assert
+    const mainElement = screen.getByRole('main');
     expect(mainElement).toHaveAttribute('id', 'main');
   });
 });
