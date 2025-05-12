@@ -24,4 +24,24 @@ describe('Main Component', () => {
     const mainElement = screen.getByRole('main');
     expect(mainElement).toHaveAttribute('id', 'main');
   });
+
+  it('loading', () => {
+    // arrange
+    const Stub = createRoutesStub([
+      {
+        path: '/',
+        Component: () => (
+          <Main navigation={{ location: { search: '' }, state: 'loading' }} />
+        ),
+      },
+    ]);
+
+    // act
+    render(<Stub initialEntries={['/']} />);
+
+    // assert
+    const mainElement = screen.getByRole('main');
+    expect(mainElement).toHaveAttribute('id', 'main');
+    expect(mainElement).toHaveClass('opacity-25');
+  });
 });

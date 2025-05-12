@@ -20,6 +20,7 @@ export default defineConfig({
   },
   test: {
     // vitest
+    include: ['app/**/*.test.{ts,tsx}'],
     globals: true,
     environment: 'jsdom',
   },
