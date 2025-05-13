@@ -4,7 +4,7 @@ import { Main } from './Main';
 import '@testing-library/jest-dom';
 
 describe('Main Component', () => {
-  it('idle', () => {
+  it('not loading style', () => {
     // arrange
     const Stub = createRoutesStub([
       {
@@ -25,7 +25,7 @@ describe('Main Component', () => {
     expect(mainElement).toHaveAttribute('id', 'main');
   });
 
-  it('loading', () => {
+  it('loading style', () => {
     // arrange
     const Stub = createRoutesStub([
       {
