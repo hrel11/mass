@@ -31,12 +31,16 @@ export default function Contact() {
   return (
     <div className="flex w-[40rem]">
       <div>
-        <img
-          className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c8] object-cover"
-          alt={`${contact.first} ${contact.last} avatar`}
-          key={contact.avatar}
-          src={contact.avatar}
-        />
+        {contact.avatar ? (
+          <img
+            className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c8] object-cover"
+            alt={`${contact.first} ${contact.last} avatar`}
+            key={contact.avatar}
+            src={contact.avatar}
+          />
+        ) : (
+          <div className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c8]" />
+        )}
       </div>
 
       <div>
