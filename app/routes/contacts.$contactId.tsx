@@ -50,7 +50,7 @@ export default function Contact() {
               {contact.first} {contact.last}
             </>
           ) : (
-            <i className="text-[#818181]">No Name</i>
+            <i className="text-[#818181]">名前なし</i>
           )}{' '}
           <Favorite contact={contact} />
         </h1>
