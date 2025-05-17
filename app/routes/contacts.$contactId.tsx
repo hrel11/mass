@@ -39,7 +39,7 @@ export default function Contact() {
             src={contact.avatar}
           />
         ) : (
-          <div className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c8]" />
+          <div className="mr-8 h-48 w-48 rounded-[1.5rem] bg-[#c8c8c88a]" />
         )}
       </div>
 
